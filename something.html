@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing Color Of Button</title>
+    <style>
+        button {
+            background-color: white;
+            font-size: 20px;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+<body>
+  <h1>Change the buttons text color random value</h1>
+  <button onclick="randomColor(event)" id="color">Click here to change my color</button>
+  <button onclick="backgroundChange(event)" id="backgroundcolor">Click me to change my color to an array value!</button>
+  <script>
+      var btn1 = document.getElementById("color");
+      var btn2 = document.getElementById("backgroundcolor");
+      var arrofbackcolor = ["red","yellow","pink","skyblue","orange","peru"]
+      var count  = 0;
+      function randomColor(e) {
+          event.preventDefault();
+          btn1.style.color = randomvalue();
+     }
+
+     function backgroundChange(e) {
+         event.preventDefault();
+         btn2.style.backgroundColor = arrofbackcolor[count++];
+         if(count == arrofbackcolor.length) {
+             count = 0;
+         }
+     }
+     function randomvalue() {
+         var colorstr = "#" + Math.ceil((Math.random()*15)%9) + Math.ceil((Math.random()*15)%9) + Math.ceil((Math.random()*15)%9) + Math.ceil((Math.random()*15)%9) + Math.ceil((Math.random()*15)%9) + Math.ceil((Math.random()*15)%9);
+        //  console.log(colorstr);
+        return colorstr;
+     }
+
+
+  </script>
+</body>
+</html>
